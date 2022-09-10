@@ -1,11 +1,14 @@
-import logo from './logo.svg';
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
+import BasicForm from "./Components/BasicForm";
 
 function App() {
-  return (
-
-  );
+ return(
+     <div>
+         <BasicForm/>
+     </div>
+ )
 }
 
 export default App;
