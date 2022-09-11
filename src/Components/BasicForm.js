@@ -70,6 +70,7 @@ export default class BasicForm extends React.Component
                     </form>
                 )}
             </Formik>
+            console.log('hello')
         </div>);
     }
 }
