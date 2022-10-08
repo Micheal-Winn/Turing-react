@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import BasicForm from "./Components/BasicForm";
-import MovieListPage from './features/movies/MovieListPage';
+import MovieListPage from './features/pages/MovieListPage';
 
 function App() {
  return(

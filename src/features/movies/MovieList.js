@@ -1,14 +1,20 @@
-import React from 'react'
-import Movies from './Movies'
+import React from "react";
 
-function MovieList({movieList}) {
-  return (
-        <div>
-            {
-                movieList.map(movie => <Movies key={movie._id} movie={movie}/>)
-            }
-        </div>
-  )
-}
+import Movies from "./Movies";
 
-export default MovieList
+    function MovieList({movieList,deleteBtnHandler,editHandler}) {
+        return (
+            <div>
+                {
+                    movieList.map(movie => <Movies
+                        key={movie._id}
+                        deleteBtnHandler={deleteBtnHandler}
+                        editHandler = {editHandler}
+                        movie={movie}/>)
+
+                }
+            </div>
+        )
+    }
+
+    export default MovieList

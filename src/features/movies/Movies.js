@@ -1,19 +1,40 @@
-import React from 'react'
+import {useNavigate} from "react-router-dom";
 
-function Movies({movie}) {
-  return (
-    <div className='form-control text-center p-5'>
-        <div>
-           <h1 className='text-primary'> {movie.title}</h1>
+
+export default function Movie({movie,deleteBtnHandler,editHandler})
+{
+    const navigate = useNavigate();
+    const reviewHandler = (movie)=>{
+        console.log('Load Movie Review ',movie);
+        navigate(movie._id);
+    }
+    return (<div className={"movie"}>
+
+        <div className={"movie-title"}>
+            {movie.title}
         </div>
-        <div>
-           <p className='text-success mt-3'>Year {movie.year}</p>
+        <div className={"movie-body"}>
+            <div>
+                Year {movie.year}
+            </div>
+            <div>
+                Director {movie.director.name}
+            </div>
+            <button type={"button"}
+                    className={"btn btn-primary"}
+                    onClick={()=>editHandler(movie)}>
+                Edit
+            </button> &nbsp;
+            <button type={"button"}
+                    className={"btn btn-primary"}
+                    onClick={()=>deleteBtnHandler(movie)}>
+                Delete
+            </button>
+            <button type={"button"}
+                    className={"btn btn-primary"}
+                    onClick={()=>reviewHandler(movie)}>
+                Review
+            </button>
         </div>
-        <div>
-           <p>Director  {movie.director.name}</p>
-        </div>
-    </div>
-  )
+    </div>);
 }
-
-export default Movies
